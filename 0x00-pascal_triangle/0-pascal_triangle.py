@@ -8,20 +8,15 @@ def pascal_triangle(n):
     if n <= 0:
         return []
 
-    pas_triangle = [0] * n
+    pas_triangle = [1]
 
-    for i in range(n):
-        # A code snipet that define and explained that a row is fill first and last idx with 1
-        row = [0] * (i+1)
-        row[0] = 1
-        row[len(row) - 1] = 1
+    for i in range(1, n):
+        row = [1]
+        prev_row = pas_triangle[1, i]
 
         for j in range(1, i):
-            if j > 0 and j < len(row):
-                x = pas_triangle[i - 1][j]
-                y = pas_triangle[i - 1][j - 1]
-                row[j] = x + y
-
-        pas_triangle[i] = row
+        # Calculate each element of the row based on the previous row
+            row.append(prev_row[j - 1] + prev_row[j])
+        row.append(row)
 
     return pas_triangle
