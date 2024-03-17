@@ -14,7 +14,7 @@ def canUnlockAll(boxes):
     if not boxes or not isinstance(boxes, list):
         return False
 
-    unlocked = [0]  # List to store boxes that are unlocked
+    unlocked = [0]
     for box in unlocked:
         for key in boxes[box]:
             if key not in unlocked and key < len(boxes):
