@@ -11,7 +11,7 @@ def canUnlockAll(boxes):
     :param boxes: List of boxes with keys
     :return: True if all boxes can be opened, False otherwise
     """
-    if not boxes or not isinstance(boxes, list):
+    if not boxes or type(boxes) is not list:
         return False
 
     unlocked = [0]
@@ -19,7 +19,6 @@ def canUnlockAll(boxes):
         for key in boxes[n]:
             if key not in unlocked and key < len(boxes):
                 unlocked.append(key)
-
     if len(unlocked) == len(boxes):
         return True
     return False
