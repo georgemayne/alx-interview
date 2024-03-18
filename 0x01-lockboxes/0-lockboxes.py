@@ -2,8 +2,10 @@
 
 """
 You are presented with n locked boxes in a row.
-Each box is numbered starting from 0 up to n - 1 and may contain keys to other boxes.
+Each box is numbered starting from 0 up to n - 1
+and may contain keys to other boxes.
 """
+
 
 def canUnlockAll(boxes):
     """
